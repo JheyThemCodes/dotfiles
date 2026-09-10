@@ -143,6 +143,6 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     bindsym --locked XF86MonBrightnessDown exec brightnesscontrol.sh d
     bindsym --locked XF86MonBrightnessUp exec brightnesscontrol.sh i
-    bindsym $mod+Shift+W exec wallpaper-switcher.sh
+    bindsym $mod+Shift+W exec wallpaper-switcher.sh $wallpaper_dir
     # Special key to take a screenshot with grim
     bindsym Print exec grim

@@ -1,6 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
-WALL_DIR="${XDG_CONFIG_HOME}/wallpapers"
+WALL_DIR="${1:-"$WALL_DIR"}"
+
+if [[ -z "$WALL_DIR" ]]; then
+    echo Wallpaper dir not set!
+    exit 1
+fi
+
+if [[ ! -d "$WALL_DIR" ]]; then
+    echo "$WALL_DIR" is not dir or not found!
+    exit 1
+fi
 
 __stdout_list(){
     # Find all image files, print file in front for sorting, then trim it off
