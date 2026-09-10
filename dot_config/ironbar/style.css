@@ -1,0 +1,48 @@
+@import 'theme.css';
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAweasome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window {
+    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+.workspaces button {
+    padding: 0 0.5rem;
+    margin: 0;
+    background-color: transparent;
+    color: @foreground;
+    min-width: 1rem;
+}
+
+.workspaces button.focused,
+#tags button.focused, #tags button.active {
+    /* background-color: #64727D; */
+    box-shadow: inset 0 -3px @cursor;
+}
+
+.workspaces button.urgent,
+#tags button.urgent {
+    background-color: #eb4d4b;
+}

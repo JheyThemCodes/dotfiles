@@ -1,0 +1,11 @@
+
+# export EDITOR=code
+
+PLUGINS_FILE="${ZDOTDIR}/plugin.zsh"
+PROMPT_FILE="${ZDOTDIR}/prompt.zsh"
+USER_FILE="${ZDOTDIR}/user.zsh"
+
+[ -f "$PLUGINS_FILE" ] && source "$PLUGINS_FILE"
+[ -f "$PROMPT_FILE" ] && source "$PROMPT_FILE"
+[ -f "$USER_FILE" ] && source "$USER_FILE"
+

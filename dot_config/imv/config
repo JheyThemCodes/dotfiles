@@ -1,0 +1,6 @@
+[binds]
+
+<Shift+D> = exec rm "$imv_current_file"; close
+
+<Shift+R> = exec prompt-rename.sh "$imv_current_file"
+

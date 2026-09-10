@@ -1,0 +1,35 @@
+packages:
+  pacman:
+    - zsh
+    - fish
+    - bat
+    - eza
+    - fzf
+    - ripgrep
+    - repgrep
+    - ripgrep-all
+    - yazi
+    - dust
+    - zoxide
+    - thefuck
+    - reflector
+    - dunst
+    - awww
+    - python-pywal16
+    - vlc
+    - vlc-plugins-extra
+    - sway
+    - swaylock
+    - swayidle
+    - waybar
+    - kitty
+    - uv
+    - ty
+    - ruff
+    - rofi
+    - rofi-emoji
+    - chezmoi
+    # Less important things
+    - obsidian
+    - zen-browser-bin
+    - imv

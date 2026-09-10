@@ -1,0 +1,57 @@
+#  Startup 
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '{{ .chezmoi.destDir }}/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Commands to execute on startup (before the prompt is shown)
+
+FUNCTION_DIR="${ZDOTDIR}/functions"
+
+if [[ -d "$FUNCTION_DIR" ]]; then
+    for file in $FUNCTION_DIR/*; do
+        source "$file"
+    done
+fi
+
+export EDITOR=vim
+export SYSTEMD_EDITOR=vim
+
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
+export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
+
+PATH=$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin
+alias s="kitten ssh " \
+    icat="kitten icat " \
+    mkdir='mkdir -p' \
+    ls='eza --icons=auto' \
+    l='eza -lh --icons=auto' \
+    ll='eza -lha --icons=auto --sort=name --group-directories-first' \
+    ld='eza -lhD --icons=auto' \
+    lt='eza --icons=auto --tree' \
+    cat='bat --color auto'
+
+eval $(thefuck --alias)
+
+# This is supposed to happen after compinit
+eval "$(zoxide init zsh)"
+
+# Check if the interactive shell option is set
+if [[ $- == *i* ]]; then
+    # This is a good place to load graphic/ascii art, display system information, etc.
+    # vscode has its own theming, 
+    #[[ $TERM_PROGRAM == vscode ]] || (/bin/cat ${XDG_CACHE_HOME}/wal/sequences &)
+    if command -v fastfetch >/dev/null; then
+       fastfetch
+    fi
+fi

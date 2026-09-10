@@ -1,0 +1,81 @@
+# "$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
+format = """\
+  󰣇 \
+  $directory\
+  $git_branch$git_commit$git_state $git_status\
+  $character 
+"""
+right_format = """
+$python\
+$rust\
+$memory_usage\
+$custom\
+$status\
+$os\
+$time"""
+
+continuation_prompt = '▶▶ '
+
+
+# style_choices:
+# bold
+# italic
+# underline
+# dimmed
+# inverted
+# blink
+# hidden
+# strikethrough
+# bg:<color>
+# fg:<color>
+# <color>
+# none
+
+#NOTE: you can customize the symbols, e.g:
+# [character]
+# success_symbol = "[  ]($bold fg:#f8f8f2)"
+# error_symbol = "[ ➤ ]($bold fg:#fb4934)"
+
+[directory]
+disabled = false
+format = "[$path](bold fg:#8be9fd)"
+truncate_to_repo = false
+# home_symbol = "" 
+
+[git_branch]
+format = " [  $branch](fg:#9198a1)"
+
+[git_status]
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+format = '[[( $all_status$ahead_behind )](fg:#769ff0)]($style)'
+style = "bg:#394260"
+
+
+[time]
+disabled = false
+#format = '[[  $time ](fg:#a0a9cb )]($style)'
+format = '[  $time ]($style)'
+time_format = "%R"                            # Hour:Minute Format
+
+[python]
+format = "[${symbol}(${virtualenv}) ${version}]($style)"
+style = "bold bright-yellow"
+symbol = "[ ](bold bright-blue)"
+version_format = "${raw}"
+
+[rust]
+style = "bold bright-red"
+format = " rs(italic) $symbol($style)"
+symbol = " "
+
+[memory_usage]
+style = "bold bright-cyan"
+format = " mem [${ram}( ${swap})]($style)"
+symbol = "▪▫▪ "
+
+[status]
+disabled = false
+map_symbol = true

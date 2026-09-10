@@ -1,0 +1,17 @@
+[mgr]
+ratio = [ 1, 1, 3 ] # Ratio of parent, manager, preview 
+show_hidden = true # Show hidden files
+show_symlink = true # Show symlink destinations
+
+[preview]
+max_width = 2048 # Max width of image preview (in pixels?)
+
+[[plugin.prepend_fetchers]]
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+url   = "*/"
+run   = "git"
+group = "git"

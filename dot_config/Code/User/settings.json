@@ -1,0 +1,20 @@
+{
+    "git.autofetch": true,
+    "python.analysis.typeCheckingMode": "standard",
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono','Droid Sans Mono', monospace",
+    "chat.disableAIFeatures": true,
+    "workbench.iconTheme": "catppuccin-perfect-mocha",
+    "workbench.colorTheme": "Catppuccin Noctis Mocha",
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.formatOnSave": true,
+        "editor.wordBasedSuggestions": "off",
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports.ruff": "explicit",
+            "source.fixAll.ruff": "explicit"
+        }
+    },
+    "color-highlight.markerType": "dot-before"
+}

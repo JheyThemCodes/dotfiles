@@ -1,0 +1,14 @@
+[init]
+	defaultBranch = main
+
+{{ $sites := (joinPath .chezmoi.sourceDir ".encrypteddata/scms.yaml.age" | include | decrypt |fromYaml).sites -}}
+{{ range $url, $profiles := $sites -}}
+{{ range $profiles -}}
+[includeif "hasconfig:remote.*.url:https://{{ $url }}/{{ .username }}/**"]
+	path = {{ $.chezmoi.destDir }}/.gitconfig-{{ .username }}
+
+[includeif "hasconfig:remote.*.url:git@{{ $url }}:{{ .username }}/**"]
+	path = {{ $.chezmoi.destDir }}/.gitconfig-{{ .username }}
+
+{{ end -}}
+{{ end -}}

@@ -1,0 +1,4 @@
+position = "top"
+height = 16
+[[start]]
+type = "workspaces"
