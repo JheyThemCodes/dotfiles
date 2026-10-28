@@ -16,5 +16,7 @@
             "source.fixAll.ruff": "explicit"
         }
     },
-    "color-highlight.markerType": "dot-before"
+    "color-highlight.markerType": "dot-before",
+    "git.confirmSync": false
 }
+
